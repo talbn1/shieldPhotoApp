@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Good Thymes Virtual Grocery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+</head>
+
+<body>
+<h2>Photos</h2>
+
+<table id="photoa" class="table table-striped">
+    <thead>
+    <tr>
+        <th style="width: 30px;">ID</th>
+        <th style="width: 350px;">Title</th>
+        <th style="width: 350px;">Url</th>
+        <th style="width: 50px;">Size</th>
+        <th style="width: 500px;">Location</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--/*@thymesVar id="photos" type="com.talbn1.shield.domain.Photo"*/-->
+    <tr th:each="photo : ${photos}">
+        <td th:text="${photo.id}"></td>
+        <td th:text="${photo.title}"></td>
+        <td th:text="${photo.url}"></td>
+        <td th:text="${photo.fileSize}"></td>
+        <td th:text="${photo.localPath}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+
+</html>

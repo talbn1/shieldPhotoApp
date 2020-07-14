@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'photos')}">
+
+  <body>
+    <h2>Photos</h2>
+
+    <table id="photoa" class="table table-striped">
+        <thead>
+        <tr>
+            <th style="width: 150px;">Name</th>
+<!--            <th style="width: 200px;">Address</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <!--/*@thymesVar id="photos" type="com.talbn1.shield.domain.Photo"*/-->
+        <tr th:each="photo : ${photos}">
+            <td th:text="${photo.id}"></td>
+<!--            <td th:text="${photo.firstName}"></td>
+            <td th:text="${owner.lastName}"></td>-->
+        </tr>
+        </tbody>
+    </table>
+
+  </body>
+</html>
